@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+
+<body>
+	<div class='headingCont'>
+		<span class='heading'>List</span>
+	</div>
+	<div class='container'>
+		<div class="newItemCont">
+			<input (keyup.enter)="onEnter()"
+      [(ngModel)]='newItemInput'
+      class="new-item-input"
+      placeholder="New item..."
+    >
+  </div>
+
+			<div *ngFor=" let item of itemList; let i=index" class='item'>
+				<span class="item-text">{{item}}</span>
+				<a [attr.data-index]="i" (click)='closeBtnHandler(i)' style="cursor:pointer"
+					class="item-close-btn">❌</a>
+			</div>
+		</div>
+</body>
+
+</html>
