@@ -1,0 +1,16 @@
+<div class='headingCont'>
+	<span class='heading'>List</span>
+</div>
+<div class='container'>
+	<div class="newItemCont">
+		<input (keyup.enter)="onEnter()"
+      [(ngModel)]='newItemInput'
+      class="new-item-input"
+      placeholder="New item..."
+    >
+  </div>
+		<itemContainer [itemList]="itemList" (onCloseBtn)="onCloseBtn(i)">
+		</itemContainer>
+
+
+	</div>
