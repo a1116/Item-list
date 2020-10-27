@@ -14,7 +14,11 @@ export class AppComponent {
     this.itemList.splice(index, 1);
   }
 
-  onEnter(value) {
+  onEnter() {
+    console.log(this.newItemInput);
+    if (this.newItemInput == "") {
+      return;
+    }
     this.itemList.unshift(this.newItemInput);
     this.newItemInput = "";
   }

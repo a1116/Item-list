@@ -24,11 +24,9 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
         box-shadow: 0 2px 5px #f5f5f5;
-
         padding: 0.5rem;
         margin: 1rem 2px;
         background-color: #f5f5f5;
-
         font-size: 1.1rem;
       }
 
@@ -38,7 +36,6 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 
       .item-close-btn {
         align-self: center;
-
         border-left: solid 0.1px #ddd;
         font-size: small;
         padding-left: 7px;
@@ -49,9 +46,4 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 export class ItemComponent {
   @Input() itemList: any;
   @Output() onCloseBtn = new EventEmitter();
-
-  o1nCloseBtn(i) {
-    this.itemList = "";
-    console.log(i);
-  }
 }
