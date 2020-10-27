@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
-import { AppComponent } from "../app.component";
+import { TodoListComponent } from "./todo-list.component";
 
 @Component({
   selector: "item",
@@ -47,6 +47,6 @@ export class ItemComponent {
   @Input() index: any;
 
   onCloseBtn(index) {
-    AppComponent.observable_variable.next(index);
+    TodoListComponent.observable_variable.next(index);
   }
 }

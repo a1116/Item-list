@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { Subject } from "rxjs";
+import { AppComponent } from "../app.component";
 
 @Component({
   selector: "app-todo-list",
@@ -7,7 +8,8 @@ import { Subject } from "rxjs";
   styleUrls: ["./todo-list.component.css"]
 })
 export class TodoListComponent implements OnInit {
-  name = "Angular";
+  @Input() isSignedIn: any;
+
   itemList = ["Pen", "milk", "sugar", "rice"];
   newItemInput = "";
 
@@ -31,5 +33,9 @@ export class TodoListComponent implements OnInit {
     }
     this.itemList.unshift(this.newItemInput);
     this.newItemInput = "";
+  }
+
+  onLogout() {
+    AppComponent.onLogout.next();
   }
 }

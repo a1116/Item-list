@@ -4,7 +4,8 @@
 <body>
 
 
-<app-signin></app-signin>
+	<app-signin *ngIf="!isSignedIn"></app-signin>
+	<app-todo-list [isSignedIn]="isSignedIn" *ngIf="showTodo"></app-todo-list>
 
 
 

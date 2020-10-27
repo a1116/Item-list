@@ -1,6 +1,7 @@
 <div class='headingCont'>
 	<span class='heading'>List</span>
 </div>
+<button *ngif="isSignedIn" (click)="onLogout()">logout</button>
 <div class='container'>
 	<div class="newItemCont">
 		<input (keyup.enter)="onEnter()"

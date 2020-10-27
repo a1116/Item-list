@@ -6,6 +6,21 @@ import { Observable, Subject } from "rxjs";
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"]
 })
-export class AppComponent {
-  
+export class AppComponent implements OnInit {
+  static signinObs = new Subject<boolean>();
+  static onLogout = new Subject<boolean>();
+  isSignedIn = false;
+  showTodo = false;
+
+  ngOnInit() {
+    AppComponent.signinObs.subscribe(v => {
+      console.log(v);
+      this.isSignedIn = v;
+      this.showTodo = v;
+    });
+
+    AppComponent.onLogout.subscribe(v => {
+      this.isSignedIn = !confirm("Log out?");
+    });
+  }
 }
