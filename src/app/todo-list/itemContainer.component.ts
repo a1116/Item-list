@@ -1,18 +1,15 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
-  selector: "item",
+  selector: "itemContainer",
   template: `
-    <div *ngFor="let item of itemList; let i = index" class="item">
-      <span class="item-text">{{ item }}</span>
-      <a
-        [attr.data-index]="i"
-        (click)="this.onCloseBtn.emit(i)"
-        style="cursor:pointer"
-        class="item-close-btn"
-        >❌</a
-      >
-    </div>
+    <item
+      *ngFor="let item of itemList; let i = index"
+      [text]="item"
+      index="i"
+      class="item"
+    >
+    </item>
   `,
   styles: [
     `
@@ -43,7 +40,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
     `
   ]
 })
-export class ItemComponent {
+export class ItemContainerComponent {
   @Input() itemList: any;
   @Output() onCloseBtn = new EventEmitter();
 }
