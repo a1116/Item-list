@@ -14,12 +14,9 @@
       placeholder="New item..."
     >
   </div>
+			<item [itemList]="itemList" (onCloseBtn)="onCloseBtn(i)"></item>
 
-			<div *ngFor=" let item of itemList; let i=index" class='item'>
-				<span class="item-text">{{item}}</span>
-				<a [attr.data-index]="i" (click)='closeBtnHandler(i)' style="cursor:pointer"
-					class="item-close-btn">❌</a>
-			</div>
+
 		</div>
 </body>
 

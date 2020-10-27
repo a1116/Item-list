@@ -10,7 +10,7 @@ export class AppComponent {
   itemList = ["Pen", "milk", "sugar", "rice"];
   newItemInput = "";
 
-  closeBtnHandler(index) {
+  onCloseBtn(index) {
     this.itemList.splice(index, 1);
   }
 
